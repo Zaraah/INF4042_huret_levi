@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Series</string>
+    <string name="action_settings">Changer la couleur</string>
+    <string name="button_start">Entrer</string>
+    <string name="button_text">Rafraichir</string>
+    <string name="textview">Séries TV au hasard</string>
+    <string name="title_activity_seconde">Series</string>
+    <string name="credits">Sarah Huret et Camille Levi, ESIEA, 2015</string>
+    <string name="notif_title">Application Series</string>
+    <string name="notif_msg">10 series au hasard ont été chargées!</string>
+    <string name="dialog_title">Choisir une couleur :</string>
+    <string name="toast_text">Couleur choisie :</string>
+
+</resources>

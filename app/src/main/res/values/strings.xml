@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Series</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_start">Start</string>
+    <string name="button_text">Refresh</string>
+    <string name="textview">Random TV Shows</string>
+    <string name="title_activity_seconde">Shows</string>
+    <string name="credits">Sarah Huret and Camille Levi, ESIEA, 2015</string>
+    <string name="notif_title">Series Application</string>
+    <string name="notif_msg">10 random shows have been loaded</string>
+</resources>
