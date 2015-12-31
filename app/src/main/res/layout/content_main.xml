@@ -16,11 +16,21 @@
         android:id="@+id/tv_hello_world"
         android:gravity="center"
         android:textStyle="italic"
-        android:textSize="55dp"
+        android:textSize="55sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="120dp"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icone_accueil"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="220dp"
+        android:contentDescription="@string/content_description"
+        />
+
 
     <Button
         android:layout_width="wrap_content"
@@ -28,9 +38,9 @@
         android:text="@string/button_start"
         android:onClick="launchIntent"
         android:id="@+id/btn_hello_world"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:textSize="35dp" />
+        android:layout_marginTop="350dp"
+        android:textSize="35sp" />
 
     <TextView
         android:text="@string/credits"
@@ -39,13 +49,5 @@
         android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
         android:gravity="right" />
-
-    <!--<android.support.v7.widget.RecyclerView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:id="@+id/rv_biere"
-        android:layout_below="@+id/btn_hello_world"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />-->
 
 </RelativeLayout>

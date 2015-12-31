@@ -22,7 +22,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,15 +45,6 @@ public class SecondeActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //new AsyncTask1().execute();
-        /*GetSeriesServices.startActionSeries(this);
-        IntentFilter intentFilter = new IntentFilter(SERIES_UPDATE);
-        LocalBroadcastManager.getInstance(this).registerReceiver(new SerieUpdate(), intentFilter);
-        rv = (RecyclerView) findViewById(R.id.rv_biere);
-        rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        rv.setAdapter(new SeriesAdapter(getSeriesFromFile()));*/
-
-        //randomSeries(findViewById(R.id.rv_biere));
         new AsyncTask1().execute();
     }
 
@@ -68,11 +58,6 @@ public class SecondeActivity extends AppCompatActivity {
         rv.setAdapter(new SeriesAdapter(getSeriesFromFile()));
 
     }
-
-    /*public void maFonction(View v){
-        launchIntent();
-        notification_test(this, "titre", "notif test, 1..2, 1..2");
-    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -92,84 +77,46 @@ public class SecondeActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
 
             final TextView tv = (TextView)findViewById(R.id.tv_hello_world);
-            final Button btn = (Button)findViewById(R.id.btn_hello_world);
-            final TextView rv = (TextView)findViewById(R.id.rv_serie_element_name);
-            //final TextView tb = (TextView)findViewById(R.id.toolbar);
-            final CharSequence myList[] = { "Noir", "Rouge", "Bleu", "Vert", "Gris" };
+            final CharSequence myList[] = { getResources().getString(R.string.black), getResources().getString(R.string.red), getResources().getString(R.string.blue), getResources().getString(R.string.green), getResources().getString(R.string.gray) };
             final AlertDialog.Builder ad = new AlertDialog.Builder(this);
-            ad.setTitle("Choisissez une couleur de fond:");
+            ad.setTitle(getResources().getString(R.string.dialog_title));
             ad.setSingleChoiceItems(myList, -1, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int arg1) {
-
                     switch (arg1) {
                         case 0:
                             tv.setTextColor(Color.BLACK);
-                            //btn.setTextColor(Color.BLACK);
-                            //rv.setTextColor(Color.BLACK);
-                            //tb.setBackgroundColor(Color.BLACK);
                             break;
                         case 1:
                             tv.setTextColor(Color.RED);
-                            //btn.setTextColor(Color.RED);
-                            //rv.setTextColor(Color.RED);
                             break;
                         case 2:
                             tv.setTextColor(Color.BLUE);
-                            //btn.setTextColor(Color.BLUE);
-                            //rv.setTextColor(Color.BLUE);
                             break;
                         case 3:
                             tv.setTextColor(Color.GREEN);
-                            //btn.setTextColor(Color.GREEN);
-                            //rv.setTextColor(Color.GREEN);
                             break;
                         case 4:
                             tv.setTextColor(Color.GRAY);
-                            //btn.setTextColor(Color.GRAY);
-                            //rv.setTextColor(Color.GRAY);
                             break;
                     }
-
-
                     Toast.makeText(getApplicationContext(),
-                            "Couleur choisie :" + myList[arg1],
+                            getResources().getString(R.string.toast_text) + myList[arg1],
                             Toast.LENGTH_LONG).show();
                     dialog.dismiss();
-
                 }
-
             });
-
-            /*ad.setNeutralButton("OK", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    Toast.makeText(getApplicationContext(),
-                            "couleur choisie : " + myList[arg1],
-                            Toast.LENGTH_LONG).show();
-                    dialog.dismiss();
-                }
-            });*/
-
             ad.create().show();
-
             return true;
         }
-        /*if (id == R.id.action_toast){
-            Toast.makeText(getApplicationContext(), "Toast!", Toast.LENGTH_LONG).show();
-        }*/
-
         return super.onOptionsItemSelected(item);
     }
-
-    /*public void toast_test(View v){
-        Toast.makeText(getApplicationContext(),"Toast!", Toast.LENGTH_LONG).show();
-    }*/
 
     public void notification(){
         NotificationCompat.Builder notif = new NotificationCompat.Builder(this);
         notif.setContentTitle(getResources().getString(R.string.notif_title));
         notif.setContentText(getResources().getString(R.string.notif_msg));
-        notif.setSmallIcon(R.drawable.notif_icon);
+        notif.setSmallIcon(R.drawable.icone_moyenne);
         Intent resultIntent = new Intent(this, SecondeActivity.class);
         NotificationManager notifMan = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
         notifMan.notify(22, notif.build());
@@ -191,7 +138,6 @@ public class SecondeActivity extends AppCompatActivity {
             Log.d(tag, "Thread async"+result+"name:"+Thread.currentThread().getName());
         }
     }
-
 
     public static final String SERIES_UPDATE="com.octip.cours.inf4042_11.BIERS_UPDATE";
     public class SerieUpdate extends BroadcastReceiver {
@@ -224,15 +170,11 @@ public class SecondeActivity extends AppCompatActivity {
         }
     }
 
-
     private class SeriesAdapter extends RecyclerView.Adapter<SeriesAdapter.SerieHolder> {
-
         private JSONArray series;
-
         SeriesAdapter(JSONArray SerieArray){
             this.series=SerieArray;
         }
-
         public void setNewSerie(JSONArray series){
             this.series=series;
             notifyDataSetChanged();

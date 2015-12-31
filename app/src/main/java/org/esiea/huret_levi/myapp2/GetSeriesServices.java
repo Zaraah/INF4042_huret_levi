@@ -5,15 +5,7 @@ import android.content.Intent;
 import android.content.Context;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
-import android.widget.Toast;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -55,7 +47,6 @@ public class GetSeriesServices extends IntentService {
         URL url = null;
         try{
             url = new URL("http://api.betaseries.com/shows/random?nb=10&key=141B708F9752&v=2.4.json");
-            //Toast.makeText(getApplicationContext(), "Toasty!", Toast.LENGTH_LONG).show();
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
 

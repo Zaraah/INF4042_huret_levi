@@ -9,7 +9,12 @@
     <string name="credits">Sarah Huret et Camille Levi, ESIEA, 2015</string>
     <string name="notif_title">Application Series</string>
     <string name="notif_msg">10 series au hasard ont été chargées!</string>
-    <string name="dialog_title">Choisir une couleur :</string>
-    <string name="toast_text">Couleur choisie :</string>
-
+    <string name="dialog_title">Choisir une couleur : </string>
+    <string name="toast_text">Couleur choisie : </string>
+    <string name="content_description">Logo</string>
+    <string name="black">Noir</string>
+    <string name="red">Rouge</string>
+    <string name="green">Vert</string>
+    <string name="blue">Bleu</string>
+    <string name="gray">Gris</string>
 </resources>
